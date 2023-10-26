@@ -12,7 +12,9 @@ const port = 3002;
 app.use(express.json());
 app.use(cors());
 
-app.get('/city', async (req, res) => {
+app.get("/", (req, res) => res.send("Berhasil coy"))
+
+app.get("/city", async (req, res) => {
   try {
     const apiKey = process.env.API;
     const response = await axios.get('https://api.rajaongkir.com/starter/city', {
